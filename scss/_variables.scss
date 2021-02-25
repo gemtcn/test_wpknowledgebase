@@ -1,0 +1,32 @@
+// Color
+$color-black-primary: #000;
+$color-white-primary: #fff;
+$color-text-black: #888;
+$color-text-black-secondary: #878787;
+
+// Media query
+$mobile: 480px;
+$tablet: 1024px;
+
+// Mixin
+@mixin translate($x, $y...) {
+  transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+}
+
+@mixin transition {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+@mixin font($font-size, $font-weight, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}

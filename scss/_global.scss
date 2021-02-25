@@ -1,0 +1,68 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  color: $color-black-primary;
+  background-color: $color-white-primary;
+  overflow-x: hidden;
+  min-height: 100vh;
+  padding-bottom: 173px;
+  &.no-scroll {
+    overflow: hidden;
+  }
+  @media screen and (max-width: $mobile) {
+    padding: 0;
+  }
+}
+
+.container {
+  @media screen and (min-width: 1200px){
+    max-width: 1048px;
+  }
+}
+
+.wp-main--button {
+  padding: 20px 68px;
+  background-color: #050505;
+  border-radius: 5px;
+  display: inline-block;
+  color: $color-white-primary;
+  @include font(15px, 700, 15px);
+  &:hover {
+    color: $color-white-primary;
+  }
+}
+
+.wp-main--pagination {
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    margin: 0 7px 0 0;
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 29px;
+    height: 35px;
+    border: 1px solid $color-black-primary;
+    border-radius: 5px;
+    background-color: $color-black-primary;
+    color: $color-white-primary;
+    @include font(15px, 700, 15px);
+    &.current, &:hover {
+      background-color: $color-white-primary;
+      color: $color-black-primary;
+      path {
+        fill: $color-black-primary;
+      }
+    }
+  }
+}
