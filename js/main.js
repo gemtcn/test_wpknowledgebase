@@ -4,10 +4,10 @@ import $ from "jquery";
 // Show account menu
 $('#toggleAccountMenu').on('click', function () {
   $('.wp-main--header__account--menu').toggleClass('show');
-}) 
+})
 
 // Toggle sub item on sidebar
-$('.wp-main--sidebar__group--submenu > p').on('click', function() {
+$('.wp-main--sidebar__group--submenu > p').on('click', function () {
   const arrowRight = 'url(../images/icon-arrow-right.svg) no-repeat 50%';
   const arrowDown = 'url(../images/icon-arrow-down.svg) no-repeat 50%';
   const hasUl = $(this).next('ul').length == 1;
@@ -20,7 +20,7 @@ $('.wp-main--sidebar__group--submenu > p').on('click', function() {
   }
 })
 
-$('#toggleMobileMenu').on('click', function() {
+$('#toggleMobileMenu').on('click', function () {
   if ($('#mobileMenu').hasClass('show')) {
     $('#mobileMenu').removeClass('show');
     $('body').removeClass('no-scroll');
@@ -31,3 +31,12 @@ $('#toggleMobileMenu').on('click', function() {
     $(this).children('img').attr('src', '../dist/images/icon-close-menu.svg');
   }
 })
+
+$(window).on('click', function () {
+  $('.wp-main--header__account--menu').removeClass('show');
+  $('body').removeClass('no-scroll');
+});
+
+$('.wp-main--header__account--menu, #toggleAccountMenu').on('click', function (event) {
+  event.stopPropagation();
+});
