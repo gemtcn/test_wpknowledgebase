@@ -165,7 +165,6 @@
       input {
         max-width: 413px;
         width: 100%;
-        // height: 26px;
         border: 0;
         border-bottom: 1px solid $color-text-black-secondary;
         @include font(20px, 700, unset);
@@ -282,6 +281,19 @@
       margin: 0 0 25px;
       &:last-of-type {
         margin: 0;
+      }
+    }
+    .has-label {
+      position: relative;
+      input {
+        padding-right: 60px;
+      }
+      &:after {
+        position: absolute;
+        top: 4px;
+        right: 0;
+        content: 'userid';
+        @include font(15px, 700, 15px);
       }
     }
     ::-webkit-input-placeholder { /* Edge */
