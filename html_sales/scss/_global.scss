@@ -1,0 +1,79 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200;400;700&display=swap");
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: $color-black-primary;
+  background-color: $color-white-primary;
+  overflow-x: hidden;
+  min-height: 100vh;
+  &.no-scroll {
+    overflow: hidden;
+  }
+  @media screen and (max-width: $mobile) {
+    font-size: 13px;
+  }
+}
+
+.container {
+  padding: 0 15px;
+  @media screen and (min-width: 1200px){
+    max-width: 1140px;
+  }
+}
+
+.row {
+  margin: 0 -15px;
+}
+div[class^='col-'] {
+  padding: 0 15px;
+}
+
+.spc-button {
+  @include font(19px, 700, 27px);
+  background-color: $color-black-primary;
+  padding: 11px 69px;
+  border-radius: 30px;
+  display: inline-block;
+  color: $color-white-primary;
+  border: 0;
+  &:hover {
+    color: $color-white-primary;
+  }
+}
+
+input[type="checkbox"] {
+  position: relative;
+  &:before {
+    position: absolute;
+    top: -3px;
+    left: -1px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $color-black-primary;
+    content: '';
+    background-color: $color-white-primary;
+  }
+  &:after {
+    position: absolute;
+    left: 5px;
+    top: -2px;
+    width: 8px;
+    height: 13px;
+    border: solid $color-black-primary;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: none;
+    content: '';
+  }
+  &:checked {
+    &:after {
+      display: block;
+    }
+  }
+}
